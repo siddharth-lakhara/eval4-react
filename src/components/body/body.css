@@ -1,0 +1,6 @@
+.Body-main {
+    background: #161E45;
+    display:flex;
+    flex-direction: column;
+    flex: 1;
+}
