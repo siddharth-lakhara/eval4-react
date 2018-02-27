@@ -1,0 +1,8 @@
+.login-MainCard {
+    display:flex;
+    background: white;
+    align-items: center;
+    height: 60%;
+    width: 50%;
+    flex-wrap: wrap;
+}

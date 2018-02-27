@@ -1,0 +1,19 @@
+.WelcomeCard-main {
+    width: 50%;
+    background: #3BC0F3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.WelcomeCard-text1 {
+    font-size: 250%;
+}
+
+.WelcomeCard-text2 {
+    color: white;
+    font-size: 300%;
+    font-weight: bold;
+}

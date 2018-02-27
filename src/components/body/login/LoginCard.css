@@ -1,0 +1,34 @@
+.LoginCard-main {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    
+}
+
+.LoginCard-aligner {
+    width: 10%;
+}
+
+.LoginCard-Contents {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    font-size: 40px;
+    flex: 1;
+    font-weight: bold;
+}
+
+.LoginCard-input {
+    height: 50px;
+    width: 80%;
+    border: 6px solid black;
+    font-size: 60%;
+}
+
+.LoginCard-login {
+    align-self: center;
+    border: 2px solid black;
+    width: 40%;
+    font-size: 40px;
+    border-radius: 25px;
+}
