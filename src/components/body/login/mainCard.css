@@ -5,4 +5,5 @@
     height: 60%;
     width: 50%;
     flex-wrap: wrap;
+    overflow: hidden;
 }

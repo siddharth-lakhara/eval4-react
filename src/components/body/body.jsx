@@ -11,10 +11,12 @@ class BodyComponent extends React.Component {
       loginStatus: 0,
       username: '',
       maxScore: 0,
+      userScore: 0,
     };
     this.changeState = this.changeState.bind(this);
     this.setUserName = this.setUserName.bind(this);
     this.setMaxScore = this.setMaxScore.bind(this);
+    this.setUserScore = this.setUserScore.bind(this);
   }
 
   setUserName(newUserName) {
@@ -31,6 +33,12 @@ class BodyComponent extends React.Component {
       maxScore,
     }, () => {
       console.log('max score set');
+    });
+  }
+
+  setUserScore(newScore) {
+    this.setState({
+      userScore: newScore,
     });
   }
 
@@ -57,6 +65,7 @@ class BodyComponent extends React.Component {
           changeState={this.changeState}
           username={this.state.username}
           maxScore={this.state.maxScore}
+          userScore={this.state.userScore}
         />
       );
     }

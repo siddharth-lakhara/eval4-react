@@ -2,6 +2,7 @@
     width: 50%;
     height: 100%;
     display: flex;
+    overflow: auto;
     
 }
 
@@ -29,6 +30,6 @@
     align-self: center;
     border: 2px solid black;
     width: 40%;
-    font-size: 40px;
+    font-size: 50%;
     border-radius: 25px;
 }
