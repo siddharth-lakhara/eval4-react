@@ -22,15 +22,16 @@ class LoginCard extends React.Component {
 
   loginFn() {
     const { userName } = this.state;
-    this.setState({ // clearing state
-      userName: '',
-    });
     fetch('/login', {
       method: 'POST',
       body: this.state.userName,
+    }).then(() => {
+      this.setState({
+        userName: '',
+      });
+      this.props.setUserName(userName);
+      this.props.changeState(1);
     });
-    this.props.setUserName(userName);
-    this.props.changeState(1);
   }
 
   render() {
@@ -60,5 +61,6 @@ class LoginCard extends React.Component {
     );
   }
 }
+
 
 export default LoginCard;

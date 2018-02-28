@@ -8,8 +8,8 @@ class BodyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loginStatus: 1,
-      username: 'siddharth',
+      loginStatus: 0,
+      username: '',
       maxScore: 0,
       userScore: 0,
       userResponse: {},
