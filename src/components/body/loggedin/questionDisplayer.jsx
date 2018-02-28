@@ -16,6 +16,7 @@ class QuestionDisplayer extends React.Component {
           <Options
             id={this.props.allQuestions[question].questnid}
             options={this.props.allQuestions[question].options.split(',')}
+            userResponse={this.props.userResponse}
             updateResponse={this.props.updateResponse}
           />
         </div>

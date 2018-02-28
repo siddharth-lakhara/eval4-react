@@ -63,6 +63,7 @@ class loginPage extends React.Component {
         <QuestionDisplayer
           allQuestions={this.state.allQuestions}
           updateResponse={this.props.updateResponse}
+          userResponse={this.props.userResponse}
         />
         <button
           disabled={Object.keys(this.state.allQuestions).length !== this.props.totalAnswer}

@@ -76,6 +76,17 @@ class BodyComponent extends React.Component {
 
   getResponse(oldResponseJSON) {
     console.log(oldResponseJSON);
+    const newResponseObject = {};
+    Object.keys(oldResponseJSON).map((index) => {
+      const questnid = oldResponseJSON[index].questnid;
+      const answer = oldResponseJSON[index].answer;
+      newResponseObject[questnid] = answer;
+    });
+    this.setState({
+      userResponse: newResponseObject,
+    }, () => {
+      console.log('new response object: ', newResponseObject);
+    });
   }
 
   render() {

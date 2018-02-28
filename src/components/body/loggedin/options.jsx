@@ -15,6 +15,8 @@ class Options extends React.Component {
   }
 
   render() {
+    const userResponse = this.props.userResponse;
+    const questnId = this.props.id;
     return (
       Object.keys(this.props.options).map((optionElem, index) => (
         <div className="Options">
@@ -22,6 +24,7 @@ class Options extends React.Component {
             type="radio"
             value={this.props.options[optionElem]}
             id={this.props.id} // question id
+            checked={userResponse[questnId] === this.props.options[optionElem]}
             onChange={this.changeHandler}
           />   {this.props.options[optionElem]}
         </div>
