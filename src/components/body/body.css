@@ -13,3 +13,10 @@
     align-items: center;
     flex: 1;
 }
+
+.Body-leaderboard {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}

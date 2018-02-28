@@ -1,0 +1,24 @@
+.leaderTables-main {
+    border: 2px solid black;
+    width: 60%;
+    height: 6%;
+    background: #3BC0F3;
+    font-size: 150%;
+    padding-left: 9px; 
+    display: flex;
+    justify-content: space-around;
+}
+
+.leaderTables-name {
+    color: white;
+}
+
+.leaderTables-score {
+    justify-content: flex-end;
+    text-align: right;
+    width: 50%;
+}
+
+.leaderTables-left {
+
+}

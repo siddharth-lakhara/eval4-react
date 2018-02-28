@@ -1,6 +1,7 @@
 import React from 'react';
 import MainCard from './login/mainCard';
 import LoginPage from './loggedin/loginPage';
+import LeaderBoard from './leaderBoard/leaderBoard';
 import './body.css';
 
 class BodyComponent extends React.Component {
@@ -29,9 +30,9 @@ class BodyComponent extends React.Component {
       );
     } else if (this.state.loginStatus === 2) {
       return (
-        <div>
-          leaderBoard page
-        </div>
+        <LeaderBoard
+          changeState={this.changeState} 
+        />
       );
     }
     return (
