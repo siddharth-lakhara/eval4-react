@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './LoginCard.css';
 
 class LoginCard extends React.Component {
@@ -62,5 +63,9 @@ class LoginCard extends React.Component {
   }
 }
 
+LoginCard.propTypes = {
+  setUserName: PropTypes.func.isRequired,
+  changeState: PropTypes.func.isRequired,
+};
 
 export default LoginCard;

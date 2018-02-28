@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './leaderTable.css';
 
 class leaderTable extends React.Component {
@@ -16,22 +17,13 @@ class leaderTable extends React.Component {
           </div>
 
         </div>
-        // <div>
-        //   {leader}
-        // </div>
       ))
-    //   Object.keys(booksArray).map(BookElem => (
-    //         <BookCard
-    //             className="bookCard-display"
-    //             Name={booksArray[BookElem].Name}
-    //             rating={booksArray[BookElem].rating}
-    //             like={booksArray[BookElem].like}
-    //             author={this.props.author}
-    //             bookId={booksArray[BookElem].books_id}
-    //           />
-    //   ))
     );
   }
 }
+
+leaderTable.propTypes = {
+  leaderBoard: PropTypes.array.isRequired,
+};
 
 export default leaderTable;

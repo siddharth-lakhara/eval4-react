@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './options.css';
 
 class Options extends React.Component {
@@ -18,7 +19,7 @@ class Options extends React.Component {
     const { userResponse } = this.props;
     const questnId = this.props.id;
     return (
-      Object.keys(this.props.options).map((optionElem, index) => (
+      Object.keys(this.props.options).map(optionElem => (
         <div className="Options">
           <input
             type="radio"
@@ -33,5 +34,12 @@ class Options extends React.Component {
     );
   }
 }
+
+Options.propTypes = {
+  updateResponse: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
+  userResponse: PropTypes.array.isRequired,
+  id: PropTypes.number.isRequired,
+};
 
 export default Options;

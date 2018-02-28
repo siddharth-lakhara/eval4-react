@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LeaderTable from './leaderTable';
 import './leaderBoard.css';
 
@@ -54,4 +55,8 @@ class LeaderBoard extends React.Component {
   }
 }
 
+LeaderBoard.propTypes = {
+  userScore: PropTypes.number.isRequired,
+  maxScore: PropTypes.number.isRequired,
+};
 export default LeaderBoard;

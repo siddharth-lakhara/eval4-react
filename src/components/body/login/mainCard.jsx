@@ -1,20 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LoginCard from './LoginCard';
 import './mainCard.css';
 import WelcomeCard from './WelcomeCard';
 
-class MainCard extends React.Component {
-  render() {
-    return (
-      <div className="login-MainCard">
-        <WelcomeCard />
-        <LoginCard
-          changeState={this.props.changeState}
-          setUserName={this.props.setUserName}
-        />
-      </div>
-    );
-  }
-}
+const MainCard = props => (
+  <div className="login-MainCard">
+    <WelcomeCard />
+    <LoginCard
+      changeState={this.props.changeState}
+      setUserName={this.props.setUserName}
+    />
+  </div>
+);
+
+
+MainCard.propTypes = {
+  changeState: PropTypes.func.isRequired,
+  setUserName: PropTypes.func.isRequired,
+};
 
 export default MainCard;

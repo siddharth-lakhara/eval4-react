@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MainCard from './login/mainCard';
 import LoginPage from './loggedin/loginPage';
 import LeaderBoard from './leaderBoard/leaderBoard';
@@ -46,9 +47,18 @@ class BodyComponent extends React.Component {
     });
   }
 
-  changeState(newState) {
+  getResponse(oldResponseJSON) {
+    console.log(oldResponseJSON);
+    const newResponseObject = {};
+    Object.keys(oldResponseJSON).map((index) => {
+      const { questnid } = oldResponseJSON[index];
+      const { answer } = oldResponseJSON[index];
+      newResponseObject[questnid] = answer;
+    });
     this.setState({
-      loginStatus: newState,
+      userResponse: newResponseObject,
+    }, () => {
+      console.log('new response object: ', newResponseObject);
     });
   }
 
@@ -61,7 +71,7 @@ class BodyComponent extends React.Component {
         questnid,
         answer,
       }),
-    }).then(() => {});
+    }).then(() => { });
 
     oldResponse[questnid] = answer;
     this.setState({
@@ -74,18 +84,9 @@ class BodyComponent extends React.Component {
     });
   }
 
-  getResponse(oldResponseJSON) {
-    console.log(oldResponseJSON);
-    const newResponseObject = {};
-    Object.keys(oldResponseJSON).map((index) => {
-      const questnid = oldResponseJSON[index].questnid;
-      const answer = oldResponseJSON[index].answer;
-      newResponseObject[questnid] = answer;
-    });
+  changeState(newState) {
     this.setState({
-      userResponse: newResponseObject,
-    }, () => {
-      console.log('new response object: ', newResponseObject);
+      loginStatus: newState,
     });
   }
 
@@ -125,5 +126,9 @@ class BodyComponent extends React.Component {
     );
   }
 }
+
+BodyComponent.propTypes = {
+  setHeaderText: PropTypes.func.isRequired,
+};
 
 export default BodyComponent;
