@@ -9,8 +9,29 @@ class BodyComponent extends React.Component {
     super(props);
     this.state = {
       loginStatus: 0,
+      username: '',
+      maxScore: 0,
     };
     this.changeState = this.changeState.bind(this);
+    this.setUserName = this.setUserName.bind(this);
+    this.setMaxScore = this.setMaxScore.bind(this);
+  }
+
+  setUserName(newUserName) {
+    this.setState({
+      username: newUserName,
+    }, () => {
+      console.log('username set');
+    });
+    this.props.setHeaderText(newUserName);
+  }
+
+  setMaxScore(maxScore) {
+    this.setState({
+      maxScore,
+    }, () => {
+      console.log('max score set');
+    });
   }
 
   changeState(newState) {
@@ -25,6 +46,8 @@ class BodyComponent extends React.Component {
         <div className="Body-loggedin">
           <LoginPage
             changeState={this.changeState}
+            username={this.state.username}
+
           />
         </div>
       );
@@ -32,6 +55,8 @@ class BodyComponent extends React.Component {
       return (
         <LeaderBoard
           changeState={this.changeState}
+          username={this.state.username}
+          maxScore={this.state.maxScore}
         />
       );
     }
@@ -39,6 +64,7 @@ class BodyComponent extends React.Component {
       <div className="Body-main">
         <MainCard
           changeState={this.changeState}
+          setUserName={this.setUserName}
         />
       </div>
     );

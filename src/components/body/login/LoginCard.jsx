@@ -29,6 +29,7 @@ class LoginCard extends React.Component {
       method: 'POST',
       body: this.state.userName,
     });
+    this.props.setUserName(userName);
     this.props.changeState(1);
   }
 

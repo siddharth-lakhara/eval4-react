@@ -10,6 +10,7 @@ class MainCard extends React.Component {
         <WelcomeCard />
         <LoginCard
           changeState={this.props.changeState}
+          setUserName={this.props.setUserName}
         />
       </div>
     );
