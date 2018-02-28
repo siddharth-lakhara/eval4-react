@@ -15,7 +15,7 @@ class QuestionDisplayer extends React.Component {
           </div>
           <Options
             id={this.props.allQuestions[question].questnid}
-            options={this.props.allQuestions[question].options.split(',')}
+            options={JSON.parse(this.props.allQuestions[question].options)}
             userResponse={this.props.userResponse}
             updateResponse={this.props.updateResponse}
           />

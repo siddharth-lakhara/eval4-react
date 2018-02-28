@@ -15,7 +15,7 @@ class Options extends React.Component {
   }
 
   render() {
-    const userResponse = this.props.userResponse;
+    const { userResponse } = this.props;
     const questnId = this.props.id;
     return (
       Object.keys(this.props.options).map((optionElem, index) => (
