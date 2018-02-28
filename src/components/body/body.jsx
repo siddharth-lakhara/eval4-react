@@ -8,7 +8,7 @@ class BodyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loginStatus: 2,
+      loginStatus: 0,
     };
     this.changeState = this.changeState.bind(this);
   }
@@ -31,7 +31,7 @@ class BodyComponent extends React.Component {
     } else if (this.state.loginStatus === 2) {
       return (
         <LeaderBoard
-          changeState={this.changeState} 
+          changeState={this.changeState}
         />
       );
     }

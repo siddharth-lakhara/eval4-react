@@ -25,8 +25,11 @@ class LoginCard extends React.Component {
     this.setState({ // clearing state
       userName: '',
     });
-    fetch('/login').then(response => response.json());
-    // this.props.changeState(1);
+    fetch('/login', {
+      method: 'POST',
+      body: this.state.userName,
+    });
+    this.props.changeState(1);
   }
 
   render() {

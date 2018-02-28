@@ -9,6 +9,7 @@ class LeaderBoard extends React.Component {
       leaderBoard: [],
     };
     this.updateLeaderboard = this.updateLeaderboard.bind(this);
+    this.changeState = this.changeState.bind(this);
   }
 
   componentDidMount() {
@@ -17,6 +18,10 @@ class LeaderBoard extends React.Component {
       .then((response) => {
         this.updateLeaderboard(response);
       });
+  }
+
+  changeState() {
+    this.props.changeState(0);
   }
 
   updateLeaderboard(response) {
@@ -40,7 +45,7 @@ class LeaderBoard extends React.Component {
           <LeaderTable
             leaderBoard={this.state.leaderBoard}
           />
-          <button className="leaderBoard-button">
+          <button className="leaderBoard-button" onClick={this.changeState}>
             Play again
           </button>
         </div>

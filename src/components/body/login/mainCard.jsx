@@ -8,7 +8,9 @@ class MainCard extends React.Component {
     return (
       <div className="login-MainCard">
         <WelcomeCard />
-        <LoginCard />
+        <LoginCard
+          changeState={this.props.changeState}
+        />
       </div>
     );
   }
