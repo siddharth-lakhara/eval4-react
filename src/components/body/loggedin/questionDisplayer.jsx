@@ -6,7 +6,7 @@ class QuestionDisplayer extends React.Component {
   render() {
     return (
       Object.keys(this.props.allQuestions).map((question, index) => (
-        <div className="">
+        <div className="QuestionDisplayer-main">
           <div className="QuestionDisplayer-head">
                     Question {index + 1}
           </div>
@@ -15,14 +15,11 @@ class QuestionDisplayer extends React.Component {
           </div>
           <Options
             id={this.props.allQuestions[question].questnid}
-            options={this.props.allQuestions[question].options}
+            options={this.props.allQuestions[question].options.split(',')}
+            updateResponse={this.props.updateResponse}
           />
         </div>
       )));
-    //   <div className="QuestionDisplayer">
-    //     Displays all questions
-    //   </div>
-    // );
   }
 }
 

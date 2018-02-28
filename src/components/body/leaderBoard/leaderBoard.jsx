@@ -37,8 +37,8 @@ class LeaderBoard extends React.Component {
       <div className="leaderBoard-main">
         <div className="leaderBoard-userScore">
           <p className="leaderBoard-text1">Your Score</p>
-          <span className="leaderBoard-span1">6</span>
-          <span className="leaderBoard-span2"> /12</span>
+          <span className="leaderBoard-span1">{this.props.userScore}</span>
+          <span className="leaderBoard-span2"> /{this.props.maxScore}</span>
         </div>
         <div className="leaderBoard-content">
           <div className="leaderBoard-text">Leaderboard</div>

@@ -1,0 +1,25 @@
+.QuestionDisplayer-head {
+    padding: 10px;
+    font-size: 200%;
+}
+
+.QuestionDisplayer-main{
+    border: 2px solid black;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* padding: 5%; */
+}
+
+.QuestionDisplayer-question {
+    background: #3BC0F3;
+    width: 100%;
+    text-align: center;
+    border: 2px solid black;
+    justify-content: center;
+    font-size: 200%;
+    padding: 10px;
+}

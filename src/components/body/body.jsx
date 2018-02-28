@@ -8,15 +8,19 @@ class BodyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loginStatus: 0,
-      username: '',
+      loginStatus: 1,
+      username: 'siddharth',
       maxScore: 0,
       userScore: 0,
+      userResponse: {},
+      totalAnswer: 0,
     };
     this.changeState = this.changeState.bind(this);
     this.setUserName = this.setUserName.bind(this);
     this.setMaxScore = this.setMaxScore.bind(this);
     this.setUserScore = this.setUserScore.bind(this);
+    this.updateResponse = this.updateResponse.bind(this);
+    this.getResponse = this.getResponse.bind(this);
   }
 
   setUserName(newUserName) {
@@ -48,6 +52,32 @@ class BodyComponent extends React.Component {
     });
   }
 
+  updateResponse(questnid, answer) {
+    const oldResponse = this.state.userResponse;
+    fetch('/submit', {
+      method: 'POST',
+      body: JSON.stringify({
+        username: this.state.username,
+        questnid,
+        answer,
+      }),
+    }).then(() => {});
+
+    oldResponse[questnid] = answer;
+    this.setState({
+      userResponse: oldResponse,
+      totalAnswer: Object.keys(oldResponse).length,
+    }, () => {
+      console.log('userResponse: ', this.state.userResponse);
+      console.log('userName: ', this.state.username);
+      console.log('totalAnswer: ', this.state.totalAnswer);
+    });
+  }
+
+  getResponse(oldResponseJSON) {
+    console.log(oldResponseJSON);
+  }
+
   render() {
     if (this.state.loginStatus === 1) {
       return (
@@ -55,7 +85,12 @@ class BodyComponent extends React.Component {
           <LoginPage
             changeState={this.changeState}
             username={this.state.username}
-
+            userResponse={this.state.userResponse}
+            updateResponse={this.updateResponse}
+            totalAnswer={this.state.totalAnswer}
+            setUserScore={this.setUserScore}
+            setMaxScore={this.setMaxScore}
+            getResponse={this.getResponse}
           />
         </div>
       );
