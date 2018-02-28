@@ -8,8 +8,8 @@ const MainCard = props => (
   <div className="login-MainCard">
     <WelcomeCard />
     <LoginCard
-      changeState={this.props.changeState}
-      setUserName={this.props.setUserName}
+      changeState={props.changeState}
+      setUserName={props.setUserName}
     />
   </div>
 );
